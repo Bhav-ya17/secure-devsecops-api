@@ -16,5 +16,14 @@ def health():
     }
 
 
+@app.route("/api/status")
+def status():
+    return {
+        "service": "secure-devsecops-api",
+        "status": "running",
+        "environment": "production"
+    }
+
+
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
