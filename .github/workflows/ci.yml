@@ -38,3 +38,9 @@ jobs:
         uses: semgrep/semgrep-action@v1
         with:
           config: p/python
+
+      - name: Install pip-audit
+        run: pip install pip-audit
+
+      - name: Audit dependencies
+        run : pip-audit -r requirements.txt
